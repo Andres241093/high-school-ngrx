@@ -1,5 +1,7 @@
 # HighSchoolNgrx
 
+High school front-end using NgRx with Angular
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
 
 ## Development server
