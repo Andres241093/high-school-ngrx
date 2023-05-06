@@ -1,10 +1,36 @@
 {
     "APP_TITLE": "Secundaria NgRx",
     "SEARCH": "Buscar",
+    "NO_RESULTS": "No se encontraron resultados",
     "STUDENT": {
         "LIST": {
             "TITLE": "Estudiantes",
             "CREATE": "+ Agregar estudiante"
+        },
+        "CARD": {
+            "AGE": "Edad: ",
+            "EDIT": "Editar",
+            "COURSES": "Cursos",
+            "DELETE": "Eliminar"
+        },
+        "CREATE": {
+            "TITLE": "Nuevo estudiante",
+            "NAME": "Nombre",
+            "LASTNAME": "Apellido",
+            "AGE":"Edad",
+            "COURSES": "Cursos",
+            "CANCEL": "Cancelar",
+            "SAVE": "Guardar",
+            "GENRE": {
+                "TITLE": "Género: ",
+                "MALE": "Masculino",
+                "FEMALE": "Femenino"
+            },
+            "ERRORS": {
+                "REQUIRED_NAME": "El nombre es requerido",
+                "REQUIRED_LASTNAME": "El apellido es requerido",
+                "REQUIRED_AGE": "La edad es requerida"
+            }
         }
     },
     "COURSES": {

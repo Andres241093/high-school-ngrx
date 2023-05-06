@@ -1,1 +1,17 @@
-{{student.name}}
+<mat-card class="card-container">
+    <mat-card-header>
+        <img mat-card-avatar [src]="'assets/images/'+student.gender+'.png'"  alt="gender">
+        <mat-card-title class="student-name">{{student.name}} {{student.lastname}}</mat-card-title>
+        <mat-card-subtitle>{{'STUDENT.CARD.AGE' | translate}} {{student.age}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions>
+        <button mat-button color="primary">{{'STUDENT.CARD.EDIT' | translate}}</button>
+        <button 
+        [routerLink]="['/students',student.id]"
+        mat-button 
+        color="accent">
+        {{'STUDENT.CARD.COURSES' | translate}}
+        </button>
+        <button mat-button color="warn">{{'STUDENT.CARD.DELETE' | translate}}</button>
+      </mat-card-actions>
+  </mat-card>

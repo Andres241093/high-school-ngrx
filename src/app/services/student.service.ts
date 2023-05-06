@@ -1,22 +1,40 @@
 import { Injectable } from '@angular/core';
-import { Observable, debounceTime, filter, of } from 'rxjs';
-import { Student } from '../interfaces/student-interface';
+import { Observable, debounceTime, map, of } from 'rxjs';
+import { Student, StudentResponse } from '../interfaces/student-interface';
 import { STUDENT_LIST } from '../const/student-list';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StudentService {
-  studentsList: Observable<Student[]> = of(STUDENT_LIST);
+  studentsList: Observable<StudentResponse> = of({
+    data: STUDENT_LIST,
+    pageSize: STUDENT_LIST.length
+  });
 
-  getAll(): Observable<Student[]> {
+  getAll(pageSize = 8, pageIndex = 1): Observable<StudentResponse> {
+    if((pageIndex-1) > 0){
+      this.studentsList = of({
+        data: STUDENT_LIST.slice((pageIndex - 1)*pageSize, pageIndex*pageSize),
+        pageSize: STUDENT_LIST.length
+      });
+    }else{
+      this.studentsList = of({
+        data: STUDENT_LIST.slice(0, pageIndex*pageSize),
+        pageSize: STUDENT_LIST.length
+      });
+    }
     return this.studentsList.pipe(debounceTime(3000));
   }
 
   search(searchValue: string): Observable<Student[]> {
+    this.studentsList = of({
+      data: STUDENT_LIST,
+      pageSize: STUDENT_LIST.length
+    });
     return this.studentsList.pipe(
       debounceTime(3000),
-      filter(student => !!student.find(value => value.name.toLowerCase() === searchValue.toLowerCase()))
+      map(student => student.data.filter(value => value.name.toLowerCase() === searchValue.toLowerCase()))
     );
   } 
 }

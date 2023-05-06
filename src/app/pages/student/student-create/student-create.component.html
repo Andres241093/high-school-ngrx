@@ -1,1 +1,58 @@
-<p>student-create works!</p>
+<h1 mat-dialog-title>{{'STUDENT.CREATE.TITLE' | translate}}</h1>
+<div mat-dialog-content>
+  <form [formGroup]="createStudentForm">
+    <mat-form-field>
+      <mat-label>{{'STUDENT.CREATE.NAME' | translate}}</mat-label>
+      <input matInput formControlName="name" placeholder="{{'STUDENT.CREATE.NAME' | translate}}">
+      <mat-error *ngIf="createStudentForm.get('name')?.hasError('required')">
+        {{'STUDENT.CREATE.ERRORS.REQUIRED_NAME' | translate}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>{{'STUDENT.CREATE.LASTNAME' | translate}}</mat-label>
+      <input matInput formControlName="lastname" placeholder="{{'STUDENT.CREATE.LASTNAME' | translate}}">
+      <mat-error *ngIf="createStudentForm.get('lastname')?.hasError('required')">
+        {{'STUDENT.CREATE.ERRORS.REQUIRED_LASTNAME' | translate}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>{{'STUDENT.CREATE.AGE' | translate}}</mat-label>
+      <input type="number" matInput formControlName="age" placeholder="{{'STUDENT.CREATE.AGE' | translate}}">
+      <mat-error *ngIf="createStudentForm.get('age')?.hasError('required')">
+        {{'STUDENT.CREATE.ERRORS.REQUIRED_AGE' | translate}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>{{'STUDENT.CREATE.COURSES' | translate}}</mat-label>
+      <mat-select formControlName="courses" multiple>
+        <mat-option *ngFor="let course of courseList" [value]="course.id">
+          {{course.name}}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="createStudentForm.get('age')?.hasError('required')">
+        {{'STUDENT.CREATE.ERRORS.REQUIRED_AGE' | translate}}
+      </mat-error>
+    </mat-form-field>
+
+      <mat-label>{{'STUDENT.CREATE.GENRE.TITLE' | translate}}</mat-label>
+      <mat-radio-group formControlName="gender" color="primary">
+        <mat-radio-button [checked]="true" value="male">{{'STUDENT.CREATE.GENRE.MALE' | translate}}</mat-radio-button>
+        <mat-radio-button value="female">{{'STUDENT.CREATE.GENRE.FEMALE' | translate}}</mat-radio-button>
+      </mat-radio-group>
+  </form>
+</div>
+<div class="button-group" mat-dialog-actions>
+  <button 
+  color="warn"
+  mat-raised-button 
+  mat-dialog-close>{{'STUDENT.CREATE.CANCEL' | translate}}</button>
+
+  <button 
+  (click)="save()"
+  [disabled]="!createStudentForm.valid"
+  color="primary"
+  mat-raised-button>{{'STUDENT.CREATE.SAVE' | translate}}</button>
+</div>

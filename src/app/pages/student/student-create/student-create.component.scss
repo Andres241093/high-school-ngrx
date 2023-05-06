@@ -1,0 +1,21 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+mat-form-field {
+    margin-bottom: 10px;
+}
+
+mat-radio-group { 
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    width: 45%;
+}
+
+.button-group {
+    justify-content: center;
+}

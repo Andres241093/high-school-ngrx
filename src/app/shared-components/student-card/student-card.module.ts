@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StudentCardComponent } from './student-card.component';
-
+import {MatCardModule} from '@angular/material/card';
+import { TranslateModule } from '@ngx-translate/core';
+import { MatButtonModule } from '@angular/material/button';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -9,7 +12,11 @@ import { StudentCardComponent } from './student-card.component';
     StudentCardComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatCardModule,
+    TranslateModule,
+    MatButtonModule,
+    RouterModule
   ],
   exports: [
     StudentCardComponent

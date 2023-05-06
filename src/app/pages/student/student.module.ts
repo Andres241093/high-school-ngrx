@@ -10,12 +10,14 @@ import { LayoutModule } from 'src/app/shared-components/layout/layout.module';
 import { MatButtonModule } from '@angular/material/button';
 import { SearchBarModule } from 'src/app/shared-components/search-bar/search-bar.module';
 import { StudentCardModule } from 'src/app/shared-components/student-card/student-card.module';
-
+import { NoResultsModule } from 'src/app/shared-components/no-results/no-results.module';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatDialogModule} from '@angular/material/dialog';
+import { StudentCreateModule } from './student-create/student-create.module';
 
 @NgModule({
   declarations: [
     StudentListComponent,
-    StudentCreateComponent,
     StudentEditComponent,
     StudentCourseComponent
   ],
@@ -25,7 +27,10 @@ import { StudentCardModule } from 'src/app/shared-components/student-card/studen
     LayoutModule,
     MatButtonModule,
     SearchBarModule,
-    StudentCardModule
+    StudentCardModule,
+    MatPaginatorModule,
+    NoResultsModule,
+    StudentCreateModule
   ]
 })
 export class StudentModule { }

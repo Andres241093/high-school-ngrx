@@ -1,10 +1,36 @@
 {
     "APP_TITLE": "NgRx High School",
     "SEARCH": "Search",
+    "NO_RESULTS": "No results found",
     "STUDENT": {
         "LIST": {
             "TITLE": "Students",
             "CREATE": "+ Add student"
+        },
+        "CARD": {
+            "AGE": "Age: ",
+            "EDIT": "Edit",
+            "COURSES": "Courses",
+            "DELETE": "Delete"
+        },
+        "CREATE": {
+            "TITLE": "New student",
+            "NAME": "Name",
+            "LASTNAME": "Lastmane",
+            "AGE":"Age",
+            "COURSES": "Courses",
+            "CANCEL": "Cancel",
+            "SAVE": "Save",
+            "GENRE": {
+                "TITLE": "Genre: ",
+                "MALE": "Male",
+                "FEMALE": "Female"
+            },
+            "ERRORS": {
+                "REQUIRED_NAME": "Name is required",
+                "REQUIRED_LASTNAME": "Lastname is required",
+                "REQUIRED_AGE": "Age is required"
+            }
         }
     },
     "COURSES": {

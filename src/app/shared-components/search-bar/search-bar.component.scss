@@ -1,3 +1,19 @@
 .search-form {
-    width: 100%;
+    width: 96.5vw;
+}
+
+@media screen and (max-width: 1250px) {
+    .search-form {
+        width: 95vw;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .search-form {
+        width: 93vw;
+    }
+}
+@media screen and (max-width: 860px) {
+    .search-form {
+        width: 92vw;
+    }
 }

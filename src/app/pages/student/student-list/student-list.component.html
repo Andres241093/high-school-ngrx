@@ -1,14 +1,25 @@
 <app-layout>
     <div class="title-container">
         <h1>{{'STUDENT.LIST.TITLE' | translate}}</h1>
-        <button mat-raised-button color="primary">{{'STUDENT.LIST.CREATE' | translate}}</button>
+        <button 
+        (click)="openCreateDialog()"
+        mat-raised-button color="primary">{{'STUDENT.LIST.CREATE' | translate}}</button>
     </div>
     <app-search-bar (searchValue)="search($event)"></app-search-bar>
-    <div>
-        <app-student-card 
-        *ngFor="let student of studentList"
-        [student]="student">
-        </app-student-card>
+    <div class="student-container" *ngIf="studentList.length > 0; else noResults">
+        <div *ngFor="let student of studentList">
+            <app-student-card [student]="student"></app-student-card>
+        </div>
     </div>
-    {{studentList | json}}
+    <mat-paginator 
+    class="mat-elevation-z1"
+    *ngIf="pageSize > 0"
+    [length]="pageSize"
+    [pageSize]="8"
+    [pageSizeOptions]="[4, 8, 10, 25, 100]"
+    (page)="changePage($event)">
+    </mat-paginator>
+    <ng-template #noResults>
+        <app-no-results></app-no-results>
+    </ng-template>
 </app-layout>

@@ -19,3 +19,18 @@
     text-decoration: none;
     width: 100%;
   }
+
+  img {
+    width: 30px;
+    margin-right: 10px;
+  }
+
+  .app-title {
+    visibility: visible;
+  }
+
+  @media screen and (max-width: 380px) {
+    .app-title {
+        visibility: hidden;
+    }
+  }

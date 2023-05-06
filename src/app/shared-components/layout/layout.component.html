@@ -2,7 +2,8 @@
     <button mat-icon-button (click)="drawer.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
-    <span>{{'APP_TITLE' | translate}}</span>
+      <img [src]="'favicon.ico'" alt="">
+    <span class="app-title">{{'APP_TITLE' | translate}}</span>
     <span class="spacer"></span>
     <app-lang-selector></app-lang-selector>
   </mat-toolbar>
