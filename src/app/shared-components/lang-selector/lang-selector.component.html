@@ -1,0 +1,7 @@
+<mat-form-field class="dropdown-container" appearance="fill">
+    <mat-label>Language</mat-label>
+    <mat-select (selectionChange)="changeLang($event.value)" [value]="'en'">
+      <mat-option value="valid" [value]="'en'">ENG</mat-option>
+      <mat-option value="invalid" [value]="'es'">SPA</mat-option>
+    </mat-select>
+</mat-form-field>

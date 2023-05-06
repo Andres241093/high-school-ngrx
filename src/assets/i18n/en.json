@@ -1,0 +1,16 @@
+{
+    "APP_TITLE": "NgRx High School",
+    "SEARCH": "Search",
+    "STUDENT": {
+        "LIST": {
+            "TITLE": "Students",
+            "CREATE": "+ Add student"
+        }
+    },
+    "COURSES": {
+        "LIST": {
+            "TITLE": "Courses",
+            "CREATE": "+ Add course"
+        }
+    }
+}

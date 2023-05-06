@@ -1,0 +1,14 @@
+<app-layout>
+    <div class="title-container">
+        <h1>{{'STUDENT.LIST.TITLE' | translate}}</h1>
+        <button mat-raised-button color="primary">{{'STUDENT.LIST.CREATE' | translate}}</button>
+    </div>
+    <app-search-bar (searchValue)="search($event)"></app-search-bar>
+    <div>
+        <app-student-card 
+        *ngFor="let student of studentList"
+        [student]="student">
+        </app-student-card>
+    </div>
+    {{studentList | json}}
+</app-layout>

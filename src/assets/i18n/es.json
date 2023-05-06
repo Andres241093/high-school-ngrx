@@ -1,0 +1,16 @@
+{
+    "APP_TITLE": "Secundaria NgRx",
+    "SEARCH": "Buscar",
+    "STUDENT": {
+        "LIST": {
+            "TITLE": "Estudiantes",
+            "CREATE": "+ Agregar estudiante"
+        }
+    },
+    "COURSES": {
+        "LIST": {
+            "TITLE": "Cursos",
+            "CREATE": "+ Agregar curso"
+        }
+    }
+}
