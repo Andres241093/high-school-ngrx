@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>{{'STUDENT.DELETE.TITLE' | translate}}</h1>
+<div class="dialog-content" mat-dialog-content>
+    <p>{{'STUDENT.DELETE.MESSAGE' | translate}}</p>
+    <span>{{data.name}} {{data.lastname}}</span>
+</div>
+<div mat-dialog-actions>
+  <button 
+  color="accent"
+  mat-raised-button 
+  mat-dialog-close>{{'STUDENT.DELETE.CANCEL' | translate}}</button>
+
+  <button 
+  (click)="delete()"
+  color="warn"
+  mat-raised-button>{{'STUDENT.DELETE.DELETE' | translate}}</button>
+</div>

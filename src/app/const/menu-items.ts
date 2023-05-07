@@ -7,6 +7,6 @@ export const MENU_ITEMS: MenuItem[] = [
     },
     {
       path: '/courses',
-      label: 'COURSES.LIST.TITLE'
+      label: 'COURSE.LIST.TITLE'
     }
   ];

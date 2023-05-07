@@ -5,6 +5,7 @@ import {MatCardModule} from '@angular/material/card';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
+import { StudentDeleteModule } from 'src/app/pages/student/student-delete/student-delete.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { RouterModule } from '@angular/router';
     MatCardModule,
     TranslateModule,
     MatButtonModule,
-    RouterModule
+    RouterModule,
+    StudentDeleteModule
   ],
   exports: [
     StudentCardComponent

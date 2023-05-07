@@ -1,1 +1,58 @@
-<p>student-edit works!</p>
+<h1 mat-dialog-title>{{'STUDENT.EDIT.TITLE' | translate}}</h1>
+<div mat-dialog-content>
+  <form [formGroup]="editStudentForm">
+    <mat-form-field>
+      <mat-label>{{'STUDENT.EDIT.NAME' | translate}}</mat-label>
+      <input matInput formControlName="name" placeholder="{{'STUDENT.EDIT.NAME' | translate}}">
+      <mat-error *ngIf="editStudentForm.get('name')?.hasError('required')">
+        {{'STUDENT.EDIT.ERRORS.REQUIRED_NAME' | translate}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>{{'STUDENT.EDIT.LASTNAME' | translate}}</mat-label>
+      <input matInput formControlName="lastname" placeholder="{{'STUDENT.EDIT.LASTNAME' | translate}}">
+      <mat-error *ngIf="editStudentForm.get('lastname')?.hasError('required')">
+        {{'STUDENT.EDIT.ERRORS.REQUIRED_LASTNAME' | translate}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>{{'STUDENT.EDIT.AGE' | translate}}</mat-label>
+      <input type="number" matInput formControlName="age" placeholder="{{'STUDENT.EDIT.AGE' | translate}}">
+      <mat-error *ngIf="editStudentForm.get('age')?.hasError('required')">
+        {{'STUDENT.EDIT.ERRORS.REQUIRED_AGE' | translate}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>{{'STUDENT.EDIT.COURSES' | translate}}</mat-label>
+      <mat-select formControlName="courses" multiple>
+        <mat-option *ngFor="let course of courseList" [value]="course.id">
+          {{course.name}}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="editStudentForm.get('age')?.hasError('required')">
+        {{'STUDENT.EDIT.ERRORS.REQUIRED_AGE' | translate}}
+      </mat-error>
+    </mat-form-field>
+
+      <mat-label>{{'STUDENT.EDIT.GENRE.TITLE' | translate}}</mat-label>
+      <mat-radio-group formControlName="gender" color="primary">
+        <mat-radio-button [checked]="isChecked('male')" value="male">{{'STUDENT.EDIT.GENRE.MALE' | translate}}</mat-radio-button>
+        <mat-radio-button [checked]="isChecked('female')" value="female">{{'STUDENT.EDIT.GENRE.FEMALE' | translate}}</mat-radio-button>
+      </mat-radio-group>
+  </form>
+</div>
+<div class="button-group" mat-dialog-actions>
+  <button 
+  color="accent"
+  mat-raised-button 
+  (click)="close()">{{'STUDENT.EDIT.CANCEL' | translate}}</button>
+
+  <button 
+  (click)="save()"
+  [disabled]="!editStudentForm.valid"
+  color="primary"
+  mat-raised-button>{{'STUDENT.EDIT.SAVE' | translate}}</button>
+</div>

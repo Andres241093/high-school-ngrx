@@ -1,1 +1,21 @@
-<p>course-list works!</p>
+<app-layout>
+    <div class="title-container">
+        <h1>{{'COURSE.LIST.TITLE' | translate}}</h1>
+        <button 
+        (click)="openCreateDialog()"
+        mat-raised-button color="primary">{{'COURSE.LIST.CREATE' | translate}}</button>
+    </div>
+    <app-search-bar (searchValue)="search($event)"></app-search-bar>
+    <app-course-table></app-course-table>
+    <mat-paginator 
+    class="mat-elevation-z1"
+    *ngIf="pageSize > 0"
+    [length]="pageSize"
+    [pageSize]="8"
+    [pageSizeOptions]="[4, 8, 10, 25, 100]"
+    (page)="changePage($event)">
+    </mat-paginator>
+    <ng-template #noResults>
+        <app-no-results></app-no-results>
+    </ng-template>
+</app-layout>

@@ -37,4 +37,23 @@ export class StudentService {
       map(student => student.data.filter(value => value.name.toLowerCase() === searchValue.toLowerCase()))
     );
   } 
+
+  save(student: Student): void {
+    STUDENT_LIST.push({
+      id: STUDENT_LIST.length + 1,
+      ...student
+    });
+  }
+
+  edit(student: Student): void {
+    if(student.id){
+      STUDENT_LIST[student.id-1] = {
+        ...student
+      }
+    }
+  }
+
+  delete(studentId: number): void {
+    STUDENT_LIST.splice(studentId, 1);
+  }
 }

@@ -22,46 +22,61 @@ export class StudentListComponent implements OnInit, OnDestroy {
   }
 
   getData(): void {
-    const subscription1 = this.studentService.getAll()
+    const subscription = this.studentService.getAll()
     .subscribe({
       next: students => {
         this.studentList = students.data;
         this.pageSize = students.pageSize;
       }
     });
-    this.subscriptionService.addSubscription(subscription1);
+    this.subscriptionService.addSubscription(subscription);
   }
 
   openCreateDialog(): void {
-    this.dialog.open(StudentCreateComponent, {
+    const dialogRef = this.dialog.open(StudentCreateComponent, {
       height: 'auto',
       width: '50vw',
       disableClose: true
+    });
+    dialogRef
+    .afterClosed()
+    .subscribe({
+      next: res => {
+        if(res){
+          this.getData()
+        }
+      }
     });
   }
 
   search(value: string | null): void {
     this.pageSize = 0;
     if(value){
-      const subscription2 = this.studentService.search(value)
+      const subscription = this.studentService.search(value)
       .subscribe({
         next: students => this.studentList = students
       });
-      this.subscriptionService.addSubscription(subscription2);
+      this.subscriptionService.addSubscription(subscription);
     }else {
       this.getData();
     }
   }
 
   changePage(event: PageEvent): void {
-    const subscription3 = this.studentService.getAll(event.pageSize,event.pageIndex+1)
+    const subscription = this.studentService.getAll(event.pageSize,event.pageIndex+1)
     .subscribe({
       next: students => {
         this.studentList = students.data;
         this.pageSize = students.pageSize;
       }
     });
-    this.subscriptionService.addSubscription(subscription3);
+    this.subscriptionService.addSubscription(subscription);
+  }
+
+  isGettingData(value: boolean): void {
+    if(value){
+      this.getData();
+    }
   }
 
   ngOnDestroy(): void {

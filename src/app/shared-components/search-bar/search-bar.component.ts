@@ -15,12 +15,12 @@ export class SearchBarComponent implements OnInit, OnDestroy {
   constructor(private readonly subscriptionService: SubscriptionService){}
 
   ngOnInit(): void {
-    const subscription1 = this.searchControl.valueChanges
+    const subscription = this.searchControl.valueChanges
     .pipe(debounceTime(500))
     .subscribe({
       next: (value: string | null) => this.searchValue.emit(value)
     });
-    this.subscriptionService.addSubscription(subscription1);
+    this.subscriptionService.addSubscription(subscription);
   }
 
   clearValue(): void {

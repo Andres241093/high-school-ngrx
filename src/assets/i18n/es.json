@@ -31,12 +31,72 @@
                 "REQUIRED_LASTNAME": "El apellido es requerido",
                 "REQUIRED_AGE": "La edad es requerida"
             }
+        },
+        "EDIT": {
+            "TITLE": "Editar estudiante",
+            "NAME": "Nombre",
+            "LASTNAME": "Apellido",
+            "AGE":"Edad",
+            "COURSES": "Cursos",
+            "CANCEL": "Cancelar",
+            "SAVE": "Guardar",
+            "GENRE": {
+                "TITLE": "Género: ",
+                "MALE": "Masculino",
+                "FEMALE": "Femenino"
+            },
+            "ERRORS": {
+                "REQUIRED_NAME": "El nombre es requerido",
+                "REQUIRED_LASTNAME": "El apellido es requerido",
+                "REQUIRED_AGE": "La edad es requerida"
+            }
+        },
+        "DELETE": {
+            "TITLE": "Eliminar estudiante",
+            "CANCEL": "Cancelar",
+            "DELETE": "Eliminar",
+            "MESSAGE": "¿Está seguro de eliminar este estudiante?"
         }
     },
-    "COURSES": {
+    "COURSE": {
         "LIST": {
             "TITLE": "Cursos",
             "CREATE": "+ Agregar curso"
+        },
+        "TABLE": {
+            "NAME": "Nombre",
+            "START_TIME": "Hora de inicio",
+            "END_TIME": "Hora de finalización",
+            "DELETE": "Eliminar",
+            "EDIT":"Editar"
+        },
+        "CREATE": {
+            "TITLE": "Nuevo curso",
+            "NAME": "Nombre",
+            "START_TIME": "Hora de inicio",
+            "END_TIME":"End time",
+            "ERRORS": {
+                "REQUIRED_NAME": "El nombre es requerido",
+                "REQUIRED_IN": "La hora de entrada es requerida",
+                "REQUIRED_OUT": "La hora de finalización es requerida"
+            }
+        },
+        "EDIT": {
+            "TITLE": "Editar curso",
+            "NAME": "Nombre",
+            "START_TIME": "Hora de inicio",
+            "END_TIME":"Hora de finalización",
+            "ERRORS": {
+                "REQUIRED_NAME": "El nombre es requerido",
+                "REQUIRED_IN": "La hora de entrada es requerida",
+                "REQUIRED_OUT": "La hora de finalización es requerida"
+            }
+        },
+        "DELETE": {
+            "TITLE": "Borrar curso",
+            "CANCEL": "Cancelar",
+            "DELETE": "Eliminar",
+            "MESSAGE": "¿Está seguro de eliminar este curso?"
         }
     }
 }

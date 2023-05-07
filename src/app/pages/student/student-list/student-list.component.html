@@ -8,7 +8,7 @@
     <app-search-bar (searchValue)="search($event)"></app-search-bar>
     <div class="student-container" *ngIf="studentList.length > 0; else noResults">
         <div *ngFor="let student of studentList">
-            <app-student-card [student]="student"></app-student-card>
+            <app-student-card (isUpdated)="isGettingData($event)" (isDeleted)="isGettingData($event)" [student]="student"></app-student-card>
         </div>
     </div>
     <mat-paginator 

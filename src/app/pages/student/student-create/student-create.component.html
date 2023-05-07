@@ -46,9 +46,9 @@
 </div>
 <div class="button-group" mat-dialog-actions>
   <button 
-  color="warn"
+  color="accent"
   mat-raised-button 
-  mat-dialog-close>{{'STUDENT.CREATE.CANCEL' | translate}}</button>
+  (click)="close()">{{'STUDENT.CREATE.CANCEL' | translate}}</button>
 
   <button 
   (click)="save()"

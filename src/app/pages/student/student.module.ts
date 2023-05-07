@@ -12,13 +12,11 @@ import { SearchBarModule } from 'src/app/shared-components/search-bar/search-bar
 import { StudentCardModule } from 'src/app/shared-components/student-card/student-card.module';
 import { NoResultsModule } from 'src/app/shared-components/no-results/no-results.module';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import {MatDialogModule} from '@angular/material/dialog';
 import { StudentCreateModule } from './student-create/student-create.module';
-
+import { StudentEditModule } from './student-edit/student-edit.module';
 @NgModule({
   declarations: [
     StudentListComponent,
-    StudentEditComponent,
     StudentCourseComponent
   ],
   imports: [
@@ -30,7 +28,8 @@ import { StudentCreateModule } from './student-create/student-create.module';
     StudentCardModule,
     MatPaginatorModule,
     NoResultsModule,
-    StudentCreateModule
+    StudentCreateModule,
+    StudentEditModule
   ]
 })
 export class StudentModule { }

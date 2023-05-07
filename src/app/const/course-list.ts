@@ -4,7 +4,7 @@ export const COURSE_LIST: Course[] = [
     {
         id: 1,
         name: 'Math',
-        in: '7:00 am',
-        out: '12:00 pm'
+        start_time: '7:00 am',
+        end_time: '12:00 pm'
     }
 ];

@@ -31,12 +31,72 @@
                 "REQUIRED_LASTNAME": "Lastname is required",
                 "REQUIRED_AGE": "Age is required"
             }
+        },
+        "EDIT": {
+            "TITLE": "Edit student",
+            "NAME": "Name",
+            "LASTNAME": "Lastmane",
+            "AGE":"Age",
+            "COURSES": "Courses",
+            "CANCEL": "Cancel",
+            "SAVE": "Save",
+            "GENRE": {
+                "TITLE": "Genre: ",
+                "MALE": "Male",
+                "FEMALE": "Female"
+            },
+            "ERRORS": {
+                "REQUIRED_NAME": "Name is required",
+                "REQUIRED_LASTNAME": "Lastname is required",
+                "REQUIRED_AGE": "Age is required"
+            }
+        },
+        "DELETE": {
+            "TITLE": "Delete student",
+            "CANCEL": "Cancel",
+            "DELETE": "Delete",
+            "MESSAGE": "Are you sure you want to delete this student?"
         }
     },
-    "COURSES": {
+    "COURSE": {
         "LIST": {
             "TITLE": "Courses",
             "CREATE": "+ Add course"
+        },
+        "TABLE": {
+            "NAME": "Name",
+            "START_TIME": "Start time",
+            "END_TIME": "End time",
+            "DELETE": "Delete",
+            "EDIT":"Edit"
+        },
+        "CREATE": {
+            "TITLE": "New course",
+            "NAME": "Name",
+            "START_TIME": "Start time",
+            "END_TIME":"End time",
+            "ERRORS": {
+                "REQUIRED_NAME": "Name is required",
+                "REQUIRED_IN": "Start time is required",
+                "REQUIRED_OUT": "End time is required"
+            }
+        },
+        "EDIT": {
+            "TITLE": "Edit course",
+            "NAME": "Name",
+            "START_TIME": "Start time",
+            "END_TIME":"End time",
+            "ERRORS": {
+                "REQUIRED_NAME": "Name is required",
+                "REQUIRED_IN": "Start time is required",
+                "REQUIRED_OUT": "End time is required"
+            }
+        },
+        "DELETE": {
+            "TITLE": "Delete Course",
+            "CANCEL": "Cancel",
+            "DELETE": "Delete",
+            "MESSAGE": "Are you sure you want to delete this course?"
         }
     }
 }

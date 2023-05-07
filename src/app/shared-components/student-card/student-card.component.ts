@@ -1,5 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Student } from 'src/app/interfaces/student-interface';
+import { StudentDeleteComponent } from 'src/app/pages/student/student-delete/student-delete.component';
+import { StudentEditComponent } from 'src/app/pages/student/student-edit/student-edit.component';
+import { SubscriptionService } from 'src/app/services/subscription.service';
 
 @Component({
   selector: 'app-student-card',
@@ -8,4 +12,29 @@ import { Student } from 'src/app/interfaces/student-interface';
 })
 export class StudentCardComponent {
   @Input() student: Student = {} as Student;
+  @Output() isDeleted = new EventEmitter<boolean>();
+  @Output() isUpdated = new EventEmitter<boolean>();
+  
+  constructor(private readonly dialog: MatDialog, private readonly subscriptionService: SubscriptionService){}
+
+  delete(): void {
+    const dialogRef = this.dialog.open(StudentDeleteComponent,{
+      data: this.student
+    })
+    dialogRef.afterClosed().subscribe({
+      next: res => this.isDeleted.emit(res)
+    });
+  }
+
+  edit(): void {
+    const dialogRef = this.dialog.open(StudentEditComponent,{
+      data: this.student,
+      height: 'auto',
+      width: '50vw',
+      disableClose: true
+    })
+    dialogRef.afterClosed().subscribe({
+      next: res => this.isUpdated.emit(res)
+    });
+  }
 }
