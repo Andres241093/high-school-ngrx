@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Course } from 'src/app/interfaces/course-interface';
+import { AlertService } from 'src/app/services/alert.service';
 import { CourseService } from 'src/app/services/course.service';
 
 @Component({
@@ -18,6 +19,7 @@ export class CourseEditComponent implements OnInit {
 
   constructor(private readonly courseService: CourseService, 
     private readonly dialogRef: MatDialogRef<CourseEditComponent>,
+    private readonly alert: AlertService,
     @Inject(MAT_DIALOG_DATA) private readonly data: Course){}
 
     ngOnInit(): void {
@@ -46,5 +48,6 @@ export class CourseEditComponent implements OnInit {
       ...course
     });
     this.dialogRef.close(true);
+    this.alert.show('COURSE.EDIT.SUCCESS');
   }
 }

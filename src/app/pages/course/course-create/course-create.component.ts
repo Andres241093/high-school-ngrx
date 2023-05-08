@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { AlertService } from 'src/app/services/alert.service';
 import { CourseService } from 'src/app/services/course.service';
 
 @Component({
@@ -16,6 +17,7 @@ export class CourseCreateComponent {
   });
 
   constructor(private readonly courseService: CourseService, 
+    private readonly alert: AlertService,
     private readonly dialogRef: MatDialogRef<CourseCreateComponent>){}
 
   close(): void {
@@ -29,5 +31,6 @@ export class CourseCreateComponent {
     });
     this.courseService.save(course);
     this.dialogRef.close(true);
+    this.alert.show('COURSE.CREATE.SUCCESS');
   }
 }

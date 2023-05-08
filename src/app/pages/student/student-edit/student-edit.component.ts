@@ -1,8 +1,10 @@
 import { Component, OnDestroy, OnInit, Inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { COURSE_LIST } from 'src/app/const/course-list';
 import { Course } from 'src/app/interfaces/course-interface';
 import { Student } from 'src/app/interfaces/student-interface';
+import { AlertService } from 'src/app/services/alert.service';
 import { CourseService } from 'src/app/services/course.service';
 import { StudentService } from 'src/app/services/student.service';
 import { SubscriptionService } from 'src/app/services/subscription.service';
@@ -28,6 +30,7 @@ export class StudentEditComponent implements OnInit, OnDestroy {
     private readonly studentService: StudentService, 
     private readonly dialogRef: MatDialogRef<StudentEditComponent>,
     private readonly subscriptionService: SubscriptionService,
+    private readonly alert: AlertService,
     @Inject(MAT_DIALOG_DATA) private readonly data: Student){}
 
   ngOnInit(): void {
@@ -35,7 +38,7 @@ export class StudentEditComponent implements OnInit, OnDestroy {
   }
 
   getCourseList(): void {
-    const susbcription = this.courseService.getAll()
+    const susbcription = this.courseService.getAll(COURSE_LIST.length)
     .subscribe({
       next: course => {
         this.courseList = course.data;
@@ -78,6 +81,7 @@ export class StudentEditComponent implements OnInit, OnDestroy {
       ...student
     });
     this.dialogRef.close(true);
+    this.alert.show('STUDENT.EDIT.SUCCESS');
   }
 
   ngOnDestroy(): void {

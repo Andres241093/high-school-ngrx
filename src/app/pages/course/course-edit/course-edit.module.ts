@@ -9,6 +9,8 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { AlertService } from 'src/app/services/alert.service';
 
 
 
@@ -23,8 +25,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatDialogModule,
     MatButtonModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSnackBarModule
   ],
-  exports: [CourseEditComponent]
+  exports: [CourseEditComponent],
+  providers: [AlertService]
 })
 export class CourseEditModule { }

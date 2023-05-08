@@ -21,6 +21,7 @@
             "COURSES": "Cursos",
             "CANCEL": "Cancelar",
             "SAVE": "Guardar",
+            "SUCCESS": "Estudiante creado con éxito!",
             "GENRE": {
                 "TITLE": "Género: ",
                 "MALE": "Masculino",
@@ -40,6 +41,7 @@
             "COURSES": "Cursos",
             "CANCEL": "Cancelar",
             "SAVE": "Guardar",
+            "SUCCESS": "Estudiante editado con éxito!",
             "GENRE": {
                 "TITLE": "Género: ",
                 "MALE": "Masculino",
@@ -55,7 +57,8 @@
             "TITLE": "Eliminar estudiante",
             "CANCEL": "Cancelar",
             "DELETE": "Eliminar",
-            "MESSAGE": "¿Está seguro de eliminar este estudiante?"
+            "MESSAGE": "¿Está seguro de eliminar este estudiante?",
+            "SUCCESS": "Estudiante eliminado con éxito!"
         }
     },
     "COURSE": {
@@ -78,6 +81,7 @@
             "END_DATE":"Fecha de finalización",
             "CANCEL": "Cancelar",
             "SAVE": "Guardar",
+            "SUCCESS": "Curso creado con éxito!",
             "ERRORS": {
                 "REQUIRED_NAME": "El nombre es requerido",
                 "REQUIRED_RANGE_DATE": "El rango de fechas es requerido"
@@ -91,6 +95,7 @@
             "END_DATE":"Fecha de finalización",
             "CANCEL": "Cancelar",
             "SAVE": "Guardar",
+            "SUCCESS": "Curso editado con éxito!",
             "ERRORS": {
                 "REQUIRED_NAME": "El nombre es requerido",
                 "REQUIRED_RANGE_DATE": "El rango de fechas es requerido"
@@ -100,7 +105,8 @@
             "TITLE": "Borrar curso",
             "CANCEL": "Cancelar",
             "DELETE": "Eliminar",
-            "MESSAGE": "¿Está seguro de eliminar este curso?"
+            "MESSAGE": "¿Está seguro de eliminar este curso?",
+            "SUCCESS": "Curso eliminado con éxito!"
         }
     },
     "STUDENT_COURSE": {

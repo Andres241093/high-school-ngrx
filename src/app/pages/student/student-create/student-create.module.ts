@@ -9,7 +9,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { AlertService } from 'src/app/services/alert.service';
 
 @NgModule({
   declarations: [StudentCreateComponent],
@@ -22,10 +23,12 @@ import {MatRadioModule} from '@angular/material/radio';
     MatDialogModule,
     MatButtonModule,
     MatSelectModule,
-    MatRadioModule
+    MatRadioModule,
+    MatSnackBarModule
   ],
   exports: [
     StudentCreateComponent
-  ]
+  ],
+  providers: [AlertService]
 })
 export class StudentCreateModule { }

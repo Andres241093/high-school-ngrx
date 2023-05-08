@@ -4,6 +4,8 @@ import { StudentDeleteComponent } from './student-delete.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { AlertService } from 'src/app/services/alert.service';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
@@ -15,10 +17,12 @@ import { MatButtonModule } from '@angular/material/button';
     CommonModule,
     MatDialogModule,
     MatButtonModule,
-    TranslateModule
+    TranslateModule,
+    MatSnackBarModule
   ],
   exports: [
     StudentDeleteComponent
-  ]
+  ],
+  providers: [AlertService]
 })
 export class StudentDeleteModule { }

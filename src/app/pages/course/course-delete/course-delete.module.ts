@@ -4,6 +4,8 @@ import { CourseDeleteComponent } from './course-delete.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { TranslateModule } from '@ngx-translate/core';
+import { AlertService } from 'src/app/services/alert.service';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
@@ -15,7 +17,9 @@ import { TranslateModule } from '@ngx-translate/core';
     CommonModule,
     MatDialogModule,
     MatButtonModule,
-    TranslateModule
-  ]
+    TranslateModule,
+    MatSnackBarModule
+  ],
+  providers: [AlertService]
 })
 export class CourseDeleteModule { }

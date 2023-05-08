@@ -2,6 +2,7 @@ import { Component,Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { STUDENT_LIST } from 'src/app/const/student-list';
 import { Student } from 'src/app/interfaces/student-interface';
+import { AlertService } from 'src/app/services/alert.service';
 import { StudentService } from 'src/app/services/student.service';
 
 @Component({
@@ -13,6 +14,7 @@ export class StudentDeleteComponent {
 
   constructor(private readonly dialogRef: MatDialogRef<StudentDeleteComponent>,
     private readonly studentService: StudentService,
+    private readonly alert: AlertService,
     @Inject(MAT_DIALOG_DATA) public readonly data: Student){}
 
   close(): void {
@@ -23,5 +25,6 @@ export class StudentDeleteComponent {
     const index = STUDENT_LIST.indexOf(this.data)
     this.studentService.delete(index);
     this.dialogRef.close(true);
+    this.alert.show('STUDENT.DELETE.SUCCESS');
   }
 }
