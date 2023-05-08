@@ -1,1 +1,54 @@
-<p>course-create works!</p>
+<h1 mat-dialog-title>{{'COURSE.CREATE.TITLE' | translate}}</h1>
+<div mat-dialog-content>
+  <form [formGroup]="createCourseForm">
+    <mat-form-field>
+      <mat-label>{{'COURSE.CREATE.NAME' | translate}}</mat-label>
+      <input matInput formControlName="name" placeholder="{{'COURSE.CREATE.NAME' | translate}}">
+      <mat-error *ngIf="createCourseForm.get('name')?.hasError('required')">
+        {{'COURSE.CREATE.ERRORS.REQUIRED_NAME' | translate}}
+      </mat-error>
+    </mat-form-field>
+<!--
+    <mat-form-field>
+      <mat-label>{{'COURSE.CREATE.START_DATE' | translate}}</mat-label>
+      <input matInput formControlName="start_date" placeholder="{{'COURSE.CREATE.START_DATE' | translate}}">
+      <mat-error *ngIf="createCourseForm.get('start_date')?.hasError('required')">
+        {{'COURSE.CREATE.ERRORS.REQUIRED_START_DATE' | translate}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>{{'COURSE.CREATE.END_DATE' | translate}}</mat-label>
+      <input type="number" matInput formControlName="end_date" placeholder="{{'COURSE.CREATE.END_DATE' | translate}}">
+      <mat-error *ngIf="createCourseForm.get('end_date')?.hasError('required')">
+        {{'COURSE.CREATE.ERRORS.REQUIRED_END_DATE' | translate}}
+      </mat-error>
+    </mat-form-field>
+-->
+    <mat-form-field appearance="fill">
+        <mat-label>{{'COURSE.CREATE.DATE_RANGE' | translate}}</mat-label>
+        <mat-date-range-input [rangePicker]="picker">
+          <input matStartDate formControlName="start_date" placeholder="{{'COURSE.CREATE.START_DATE' | translate}}">
+          <input matEndDate formControlName="end_date" placeholder="{{'COURSE.CREATE.END_DATE' | translate}}">
+        </mat-date-range-input>
+        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+        <mat-error *ngIf="createCourseForm.get('start_date')?.hasError('required') || createCourseForm.get('end_date')?.hasError('required')">
+            {{'COURSE.CREATE.ERRORS.REQUIRED_RANGE_DATE' | translate}}
+          </mat-error>
+      </mat-form-field>
+  </form>
+</div>
+<div class="button-group" mat-dialog-actions>
+  <button 
+  color="accent"
+  mat-raised-button 
+  (click)="close()">{{'COURSE.CREATE.CANCEL' | translate}}</button>
+
+  <button 
+  (click)="save()"
+  [disabled]="!createCourseForm.valid"
+  color="primary"
+  mat-raised-button>{{'COURSE.CREATE.SAVE' | translate}}</button>
+</div>

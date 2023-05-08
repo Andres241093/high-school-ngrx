@@ -12,8 +12,7 @@ import { SubscriptionService } from 'src/app/services/subscription.service';
 })
 export class StudentCardComponent {
   @Input() student: Student = {} as Student;
-  @Output() isDeleted = new EventEmitter<boolean>();
-  @Output() isUpdated = new EventEmitter<boolean>();
+  @Output() getStudentData = new EventEmitter<boolean>();
   
   constructor(private readonly dialog: MatDialog, private readonly subscriptionService: SubscriptionService){}
 
@@ -22,7 +21,7 @@ export class StudentCardComponent {
       data: this.student
     })
     dialogRef.afterClosed().subscribe({
-      next: res => this.isDeleted.emit(res)
+      next: res => this.getStudentData.emit(res)
     });
   }
 
@@ -30,11 +29,11 @@ export class StudentCardComponent {
     const dialogRef = this.dialog.open(StudentEditComponent,{
       data: this.student,
       height: 'auto',
-      width: '50vw',
+      width: '400px',
       disableClose: true
     })
     dialogRef.afterClosed().subscribe({
-      next: res => this.isUpdated.emit(res)
+      next: res => this.getStudentData.emit(res)
     });
   }
 }

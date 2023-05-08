@@ -1,1 +1,38 @@
-<p>course-edit works!</p>
+<h1 mat-dialog-title>{{'COURSE.EDIT.TITLE' | translate}}</h1>
+<div mat-dialog-content>
+  <form [formGroup]="editCourseForm">
+    <mat-form-field>
+      <mat-label>{{'COURSE.EDIT.NAME' | translate}}</mat-label>
+      <input matInput formControlName="name" placeholder="{{'COURSE.EDIT.NAME' | translate}}">
+      <mat-error *ngIf="editCourseForm.get('name')?.hasError('required')">
+        {{'COURSE.EDIT.ERRORS.REQUIRED_NAME' | translate}}
+      </mat-error>
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+        <mat-label>{{'COURSE.EDIT.DATE_RANGE' | translate}}</mat-label>
+        <mat-date-range-input [rangePicker]="picker">
+          <input matStartDate formControlName="start_date" placeholder="{{'COURSE.EDIT.START_DATE' | translate}}">
+          <input matEndDate formControlName="end_date" placeholder="{{'COURSE.EDIT.END_DATE' | translate}}">
+        </mat-date-range-input>
+        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+        <mat-error *ngIf="editCourseForm.get('start_date')?.hasError('required') || editCourseForm.get('end_date')?.hasError('required')">
+            {{'COURSE.EDIT.ERRORS.REQUIRED_RANGE_DATE' | translate}}
+          </mat-error>
+      </mat-form-field>
+  </form>
+</div>
+<div class="button-group" mat-dialog-actions>
+  <button 
+  color="accent"
+  mat-raised-button 
+  (click)="close()">{{'COURSE.EDIT.CANCEL' | translate}}</button>
+
+  <button 
+  (click)="save()"
+  [disabled]="!editCourseForm.valid"
+  color="primary"
+  mat-raised-button>{{'COURSE.EDIT.SAVE' | translate}}</button>
+</div>

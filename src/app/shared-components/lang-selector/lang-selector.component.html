@@ -1,7 +1,22 @@
-<mat-form-field class="dropdown-container" appearance="fill">
-    <mat-label>Language</mat-label>
-    <mat-select (selectionChange)="changeLang($event.value)" [value]="'en'">
+
+  <button [matMenuTriggerFor]="belowMenu" mat-button>
+      <span>{{title}}</span>
+      <mat-icon>
+        arrow_drop_down
+      </mat-icon>
+  </button>
+<mat-menu #belowMenu="matMenu" yPosition="below">
+  <button (click)="changeLang('en')" mat-menu-item>
+    <mat-icon class="icon" *ngIf="title === 'English'">check</mat-icon>
+    English
+  </button>
+  <button (click)="changeLang('es')" mat-menu-item>
+    <mat-icon class="icon" *ngIf="title === 'Español'">check</mat-icon>
+    Español
+  </button>
+</mat-menu>
+<!--
+    <mat-select class="dropdown-container" (selectionChange)="changeLang($event.value)" [value]="'en'">
       <mat-option value="valid" [value]="'en'">Eng</mat-option>
       <mat-option value="invalid" [value]="'es'">Spa</mat-option>
-    </mat-select>
-</mat-form-field>
+    </mat-select>-->

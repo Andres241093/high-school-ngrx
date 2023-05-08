@@ -5,10 +5,14 @@
         (click)="openCreateDialog()"
         mat-raised-button color="primary">{{'COURSE.LIST.CREATE' | translate}}</button>
     </div>
-    <app-search-bar (searchValue)="search($event)"></app-search-bar>
-    <app-course-table></app-course-table>
+    <div class="container">
+        <app-search-bar (searchValue)="search($event)"></app-search-bar>
+        <app-course-table 
+        *ngIf="dataTable.data.length > 0; else noResults"
+        (getDataTable)="isGettingData($event)" [dataSource]="dataTable"></app-course-table>
+    </div>
     <mat-paginator 
-    class="mat-elevation-z1"
+    class="mat-elevation-z2"
     *ngIf="pageSize > 0"
     [length]="pageSize"
     [pageSize]="8"

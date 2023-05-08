@@ -34,7 +34,26 @@ export class CourseService {
     });
     return this.courseList.pipe(
       debounceTime(3000),
-      map(student => student.data.filter(value => value.name.toLowerCase() === searchValue.toLowerCase()))
+      map(student => student.data.filter(value => value.name.toLowerCase().includes(searchValue.toLowerCase())))
     );
   } 
+
+  save(course: Course): void {
+    COURSE_LIST.push({
+      id: COURSE_LIST.length + 1,
+      ...course
+    });
+  }
+
+  edit(course: Course): void {
+    if(course.id){
+      COURSE_LIST[course.id-1] = {
+        ...course
+      }
+    }
+  }
+
+  delete(courseId: number): void {
+    COURSE_LIST.splice(courseId, 1);
+  }
 }

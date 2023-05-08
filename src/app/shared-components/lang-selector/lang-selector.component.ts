@@ -7,10 +7,12 @@ import {TranslateService} from '@ngx-translate/core';
   styleUrls: ['./lang-selector.component.scss']
 })
 export class LangSelectorComponent {
+  title = 'English'
 
   constructor(private readonly translateService: TranslateService){}
 
   changeLang(lang: string) {
     this.translateService.use(lang);
+    this.title = lang === 'en' ? 'English' : 'Español';
   }
 }

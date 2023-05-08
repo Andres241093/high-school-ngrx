@@ -27,8 +27,8 @@
 
     <mat-form-field>
       <mat-label>{{'STUDENT.EDIT.COURSES' | translate}}</mat-label>
-      <mat-select formControlName="courses" multiple>
-        <mat-option *ngFor="let course of courseList" [value]="course.id">
+      <mat-select [compareWith]="compareWith" formControlName="courses" multiple>
+        <mat-option *ngFor="let course of courseList" [value]="course">
           {{course.name}}
         </mat-option>
       </mat-select>

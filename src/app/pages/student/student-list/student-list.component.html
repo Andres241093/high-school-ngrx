@@ -5,14 +5,16 @@
         (click)="openCreateDialog()"
         mat-raised-button color="primary">{{'STUDENT.LIST.CREATE' | translate}}</button>
     </div>
-    <app-search-bar (searchValue)="search($event)"></app-search-bar>
-    <div class="student-container" *ngIf="studentList.length > 0; else noResults">
-        <div *ngFor="let student of studentList">
-            <app-student-card (isUpdated)="isGettingData($event)" (isDeleted)="isGettingData($event)" [student]="student"></app-student-card>
+    <div class="container">
+        <app-search-bar (searchValue)="search($event)"></app-search-bar>
+        <div class="student-container" *ngIf="studentList.length > 0; else noResults">
+            <div *ngFor="let student of studentList">
+                <app-student-card (getStudentData)="isGettingData($event)" [student]="student"></app-student-card>
+            </div>
         </div>
     </div>
     <mat-paginator 
-    class="mat-elevation-z1"
+    class="paginator-container mat-elevation-z2"
     *ngIf="pageSize > 0"
     [length]="pageSize"
     [pageSize]="8"

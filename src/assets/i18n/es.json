@@ -65,31 +65,35 @@
         },
         "TABLE": {
             "NAME": "Nombre",
-            "START_TIME": "Hora de inicio",
-            "END_TIME": "Hora de finalización",
+            "START_DATE": "Fecha de inicio",
+            "END_DATE":"Fecha de finalización",
             "DELETE": "Eliminar",
             "EDIT":"Editar"
         },
         "CREATE": {
             "TITLE": "Nuevo curso",
             "NAME": "Nombre",
-            "START_TIME": "Hora de inicio",
-            "END_TIME":"End time",
+            "DATE_RANGE": "Ingrese un rango de fechas",
+            "START_DATE": "Fecha de inicio",
+            "END_DATE":"Fecha de finalización",
+            "CANCEL": "Cancelar",
+            "SAVE": "Guardar",
             "ERRORS": {
                 "REQUIRED_NAME": "El nombre es requerido",
-                "REQUIRED_IN": "La hora de entrada es requerida",
-                "REQUIRED_OUT": "La hora de finalización es requerida"
+                "REQUIRED_RANGE_DATE": "El rango de fechas es requerido"
             }
         },
         "EDIT": {
             "TITLE": "Editar curso",
             "NAME": "Nombre",
-            "START_TIME": "Hora de inicio",
-            "END_TIME":"Hora de finalización",
+            "DATE_RANGE": "Ingrese un rango de fechas",
+            "START_DATE": "Fecha de inicio",
+            "END_DATE":"Fecha de finalización",
+            "CANCEL": "Cancelar",
+            "SAVE": "Guardar",
             "ERRORS": {
                 "REQUIRED_NAME": "El nombre es requerido",
-                "REQUIRED_IN": "La hora de entrada es requerida",
-                "REQUIRED_OUT": "La hora de finalización es requerida"
+                "REQUIRED_RANGE_DATE": "El rango de fechas es requerido"
             }
         },
         "DELETE": {
@@ -98,5 +102,8 @@
             "DELETE": "Eliminar",
             "MESSAGE": "¿Está seguro de eliminar este curso?"
         }
+    },
+    "STUDENT_COURSE": {
+        "TITLE": "Cursos de {{value1}} {{value2}}"
     }
 }

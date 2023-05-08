@@ -65,31 +65,35 @@
         },
         "TABLE": {
             "NAME": "Name",
-            "START_TIME": "Start time",
-            "END_TIME": "End time",
+            "START_DATE": "Start date",
+            "END_DATE":"End date",
             "DELETE": "Delete",
             "EDIT":"Edit"
         },
         "CREATE": {
             "TITLE": "New course",
             "NAME": "Name",
-            "START_TIME": "Start time",
-            "END_TIME":"End time",
+            "DATE_RANGE": "Enter a date range",
+            "START_DATE": "Start date",
+            "END_DATE":"End date",
+            "CANCEL": "Cancel",
+            "SAVE": "Save",
             "ERRORS": {
                 "REQUIRED_NAME": "Name is required",
-                "REQUIRED_IN": "Start time is required",
-                "REQUIRED_OUT": "End time is required"
+                "REQUIRED_RANGE_DATE": "Date range is required"
             }
         },
         "EDIT": {
             "TITLE": "Edit course",
             "NAME": "Name",
-            "START_TIME": "Start time",
-            "END_TIME":"End time",
+            "DATE_RANGE": "Enter a date range",
+            "START_DATE": "Start date",
+            "END_DATE":"End date",
+            "CANCEL": "Cancel",
+            "SAVE": "Save",
             "ERRORS": {
                 "REQUIRED_NAME": "Name is required",
-                "REQUIRED_IN": "Start time is required",
-                "REQUIRED_OUT": "End time is required"
+                "REQUIRED_RANGE_DATE": "Date range is required"
             }
         },
         "DELETE": {
@@ -98,5 +102,8 @@
             "DELETE": "Delete",
             "MESSAGE": "Are you sure you want to delete this course?"
         }
+    },
+    "STUDENT_COURSE": {
+        "TITLE": "{{value1}} {{value2}} Courses"
     }
 }

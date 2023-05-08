@@ -34,8 +34,12 @@ export class StudentService {
     });
     return this.studentsList.pipe(
       debounceTime(3000),
-      map(student => student.data.filter(value => value.name.toLowerCase() === searchValue.toLowerCase()))
+      map(student => student.data.filter(value => value.name.toLowerCase().includes(searchValue.toLowerCase())))
     );
+  } 
+
+  getStudent(studentId: number): Observable<Student | undefined> {
+    return of(STUDENT_LIST.find(student => student.id === Number(studentId)));
   } 
 
   save(student: Student): void {

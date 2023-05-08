@@ -35,7 +35,7 @@ export class StudentListComponent implements OnInit, OnDestroy {
   openCreateDialog(): void {
     const dialogRef = this.dialog.open(StudentCreateComponent, {
       height: 'auto',
-      width: '50vw',
+      width: '400px',
       disableClose: true
     });
     dialogRef

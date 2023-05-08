@@ -1,20 +1,35 @@
-import { AfterViewInit, Component, Input, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
+import { Component, Input, Output,EventEmitter } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
-import { COURSE_LIST } from 'src/app/const/course-list';
 import { Course } from 'src/app/interfaces/course-interface';
+import { CourseDeleteComponent } from 'src/app/pages/course/course-delete/course-delete.component';
+import { CourseEditComponent } from 'src/app/pages/course/course-edit/course-edit.component';
 
 @Component({
   selector: 'app-course-table',
   templateUrl: './course-table.component.html',
   styleUrls: ['./course-table.component.scss']
 })
-export class CourseTableComponent implements AfterViewInit {
-  dataSource: MatTableDataSource<Course> = new MatTableDataSource(COURSE_LIST);
-  @ViewChild(MatPaginator) paginator: MatPaginator = {} as MatPaginator;
+export class CourseTableComponent {
+  @Input() dataSource: MatTableDataSource<Course> = new MatTableDataSource([] as Course[]);
+  @Output() getDataTable = new EventEmitter<boolean>();
   displayedColumns = ['id','name','start_time','end_time','options'];
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
+  constructor(private readonly dialog: MatDialog){}
+
+  delete(course: Course){
+    this.dialog.open(CourseDeleteComponent,{
+      data: course
+    })
+    .afterClosed()
+    .subscribe(res => this.getDataTable.emit(res));
+  }
+
+  edit(course: Course){
+    this.dialog.open(CourseEditComponent,{
+      data: course
+    })
+    .afterClosed()
+    .subscribe(res => this.getDataTable.emit(res));
   }
 }

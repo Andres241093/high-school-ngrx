@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { StudentListComponent } from './student-list/student-list.component';
-import { StudentCourseComponent } from './student-course/student-course.component';
 
 const routes: Routes = [
   {
@@ -10,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: ':id',
-    component: StudentCourseComponent
+    loadChildren: () => import('./student-course/student-course.module').then(m => m.StudentCourseModule)
   }
 ];
 

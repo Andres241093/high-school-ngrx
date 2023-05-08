@@ -6,7 +6,27 @@ export const STUDENT_LIST: Student[] = [
       name: 'Andres',
       lastname: 'Ucero',
       age: 29,
-      gender: 'male'
+      gender: 'male',
+      courses: [
+        {
+          id: 1,
+          name: 'Math',
+          start_date: new Date(2023, 1, 12),
+          end_date: new Date(2023, 1, 13)
+        },
+        {
+            id: 2,
+            name: 'Marketing',
+            start_date: new Date(2023, 2, 12),
+            end_date: new Date(2023, 2, 13)
+        },
+        {
+          id: 5,
+          name: 'Personal finance',
+          start_date: new Date(2023, 5, 12),
+          end_date: new Date(2023, 5, 13)
+        }  
+      ]
     },
     {
       id: 2,

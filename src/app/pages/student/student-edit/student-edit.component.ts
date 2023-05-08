@@ -56,6 +56,10 @@ export class StudentEditComponent implements OnInit, OnDestroy {
     });
   }
 
+  compareWith(course1: Course, course2: Course) {
+    return course1 && course2 && course1.id === course2.id;
+  }
+
   isChecked(gender: string): boolean {
     return this.data.gender === gender;
   }

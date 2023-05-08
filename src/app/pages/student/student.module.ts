@@ -16,8 +16,7 @@ import { StudentCreateModule } from './student-create/student-create.module';
 import { StudentEditModule } from './student-edit/student-edit.module';
 @NgModule({
   declarations: [
-    StudentListComponent,
-    StudentCourseComponent
+    StudentListComponent
   ],
   imports: [
     CommonModule,
