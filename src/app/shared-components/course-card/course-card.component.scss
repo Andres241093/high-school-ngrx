@@ -1,0 +1,20 @@
+.card-container {
+    margin-bottom: 10px;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    margin-right: 10px;
+}
+
+.course-name {
+    display: inline-block;
+    width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

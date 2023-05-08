@@ -8,8 +8,19 @@
     <div class="container">
         <app-search-bar (searchValue)="search($event)"></app-search-bar>
         <app-course-table 
+        class="table-container"
         *ngIf="dataTable.data.length > 0; else noResults"
         (getDataTable)="isGettingData($event)" [dataSource]="dataTable"></app-course-table>
+
+        <div 
+        class="cards-contianer"
+        *ngIf="dataTable.data.length > 0; else noResults">
+        <div *ngFor="let course of dataTable.data">
+            <app-course-card 
+            (getDataTable)="isGettingData($event)"
+            [course]="course"></app-course-card>
+        </div>
+        </div>
     </div>
     <mat-paginator 
     class="mat-elevation-z2"

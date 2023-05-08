@@ -3,6 +3,22 @@
     justify-content: space-between;
 }
 
+.cards-contianer {
+    display: none;
+}
+
 .container {
     max-width: 100%;
+}
+
+@media screen and (max-width: 520px) {
+    .container {
+        width: 98%;
+    }
+    .table-container{
+        display: none;
+    }
+    .cards-contianer {
+        display: inline-block;
+    }
 }

@@ -12,6 +12,7 @@ import { CourseTableModule } from 'src/app/shared-components/course-table/course
 import { MatDialogModule } from '@angular/material/dialog';
 import { CourseCreateModule } from './course-create/course-create.module';
 import { CourseEditModule } from './course-edit/course-edit.module';
+import { CourseCardModule } from 'src/app/shared-components/course-card/course-card.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CourseEditModule } from './course-edit/course-edit.module';
     CourseTableModule,
     MatDialogModule,
     CourseCreateModule,
-    CourseEditModule
+    CourseEditModule,
+    CourseCardModule
   ]
 })
 export class CourseModule { }
