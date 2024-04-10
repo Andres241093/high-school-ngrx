@@ -1,33 +1,15 @@
 .card-container {
-    padding: 10px; 
+  padding: 10px;
 }
 
 .student-name {
-    display: inline-block;
-    width: 180px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-@media screen and (max-width: 1200px) {
-    .student-name {
-        width: 250px;
-    }
-}
-
-@media screen and (max-width: 860px) {
-    .student-name {
-        width: 300px;
-    }
-}
-
-@media screen and (max-width: 380px) {
-    .card-container {
-        width: 77%;
-    }
+  display: inline-block;
+  width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 button {
-    margin-right: 10px;
+  margin-right: 10px;
 }

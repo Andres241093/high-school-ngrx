@@ -1,24 +1,24 @@
-<mat-toolbar color="primary">
-    <button mat-icon-button (click)="drawer.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
-      <img [src]="'favicon.ico'" alt="">
-    <span class="app-title">{{'APP_TITLE' | translate}}</span>
-    <span class="spacer"></span>
-    <app-lang-selector></app-lang-selector>
-  </mat-toolbar>
-  <mat-drawer-container class="mat-drawer-container">
-    <mat-drawer 
-    #drawer 
-    [mode]="'over'"
-    class="mat-drawer">
-      <div *ngFor="let item of menuItems">
-        <a mat-button [routerLink]="item.path">{{item.label | translate}}</a>
-      </div>
-    </mat-drawer>
-    <mat-drawer-content>
-        <div class="content-container">
-            <ng-content></ng-content>
-        </div>
-    </mat-drawer-content>
-  </mat-drawer-container>
+<mat-toolbar color="primary" class="header">
+  <button mat-icon-button (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <img [src]="'favicon.ico'" alt="" />
+  <span class="app-title">{{ "APP_TITLE" | translate }}</span>
+  <span class="spacer"></span>
+  <app-lang-selector></app-lang-selector>
+</mat-toolbar>
+<mat-drawer-container class="mat-drawer-container">
+  <mat-drawer #drawer [mode]="'over'" class="mat-drawer">
+    <div *ngFor="let item of menuItems">
+      <a mat-button [routerLink]="item.path">
+        <mat-icon>{{ item.icon }}</mat-icon>
+        {{ item.label | translate }}
+      </a>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="content-container">
+      <ng-content></ng-content>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

@@ -1,24 +1,26 @@
 .title-container {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .cards-contianer {
-    display: none;
+  display: none;
 }
 
 .container {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 @media screen and (max-width: 520px) {
-    .container {
-        width: 98%;
-    }
-    .table-container{
-        display: none;
-    }
-    .cards-contianer {
-        display: inline-block;
-    }
+  .container {
+    width: 98%;
+  }
+  .table-container {
+    display: none;
+  }
+  .cards-contianer {
+    display: inline-block;
+    width: 100%;
+  }
 }
